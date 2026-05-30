@@ -119,7 +119,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#F5F0E8;color:#3a3228;min-
 <div class="screen active" id="cover">
   <div class="container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:40px 20px">
     <p class="cover-tag">公主營養師 × 壓力自我檢測</p>
-    <h1 class="cover-title">測測你的壓力狀態<br>看看你最像哪種動物？🌿</h1>
+    <h1 class="cover-title">測測你的壓力狀態<br>看看你最像哪種動物？</h1>
     <p class="cover-sub">10 題快速自測，了解你的壓力等級<br>和它對身體偷偷做的事</p>
     <div class="animal-row">
       <img class="animal-thumb" src="quokka.png" alt="矮袋鼠">
@@ -192,7 +192,7 @@ body{font-family:'Noto Sans TC',sans-serif;background:#F5F0E8;color:#3a3228;min-
   </div>
   <div class="edu-body container">
     <div class="quote-box">
-      <p>很多內分泌問題，都藏著長期累積的壓力。「壓力」不只是心理層面的焦慮——血糖波動、睡眠不足、慢性發炎，這些生理壓力同樣真實存在，並悄悄干擾你的荷爾蒙分泌與代謝機能。</p>
+      <p>很多內分泌問題，都藏著長期累積的壓力。「壓力」不只是心理層面的焦慮—血糖波動、睡眠不足、慢性發炎，這些生理壓力同樣真實存在，並悄悄干擾你的荷爾蒙分泌與代謝機能。</p>
     </div>
     <div class="edu-card" style="text-align:center;margin-bottom:14px">
       <p style="font-size:16px;font-weight:700;color:#4a5a2a;margin-bottom:4px">慢性壓力 + 不良習慣</p>
@@ -302,16 +302,16 @@ body{font-family:'Noto Sans TC',sans-serif;background:#F5F0E8;color:#3a3228;min-
 
 <script>
 const Qs=[
-{q:"您是否常常感到難以控制生活中重要的事情？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否常感到難以控制生活中重要的事情？",opts:["從不","偶爾","有時","經常","總是"]},
 {q:"您是否常感到緊張、焦慮或坐立不安？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"過去一個月，您是否因為無法處理所有事情而感到沮喪？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否常需要外食或選擇超商食品當作正餐？",opts:["從不","偶爾","有時","經常","總是"]},
 {q:"您是否常感到疲倦，即使睡眠充足後仍然如此？",opts:["從不","偶爾","有時","經常","總是"]},
 {q:"您是否常常感到易怒或情緒容易波動？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"您是否有注意力不集中或記憶力下降的情形？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"您是否常感到孤單或與他人疏離？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"您是否常出現身體症狀（如脹氣、排便不順、月經不穩定、皮膚困擾）？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"您是否常覺得事情「壓著」您，讓您喘不過氣？",opts:["從不","偶爾","有時","經常","總是"]},
-{q:"過去一個月，您是否常感到自己無法應付生活壓力？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否在經期有不適反應（如經前症候群、生理痘、經痛）？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否常飲用咖啡/含糖手搖飲料？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否常出現消化不良的症狀（如脹氣、排便不順、胃酸逆流）？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否會用甜食、油炸類食物來放鬆或獎勵自己？",opts:["從不","偶爾","有時","經常","總是"]},
+{q:"您是否常感到自己無法應付生活壓力？",opts:["從不","偶爾","有時","經常","總是"]},
 ];
 
 const ANIMALS={
@@ -359,7 +359,7 @@ function next(){
 function showResult(){
   const total=ans.reduce((s,a)=>s+a,0);
   const pct=Math.round((total/40)*100);
-  let animal=pct<=35?ANIMALS.quokka:pct<=60?ANIMALS.panda:pct<=85?ANIMALS.cat:ANIMALS.trex;
+  let animal=pct<=20?ANIMALS.quokka:pct<=40?ANIMALS.panda:pct<=70?ANIMALS.cat:ANIMALS.trex;
   document.getElementById('animalName').textContent=animal.name;
   document.getElementById('animalImg').src=animal.img;
   document.getElementById('resultDesc').textContent=animal.desc;
